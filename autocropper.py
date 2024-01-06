@@ -11,8 +11,9 @@ Cell 1: Installing necessary libraries
 
 !pip install pytube
 !pip install opencv-python
-!pip install openai
+!pip install openai==0.28
 !pip install youtube-transcript-api
+!apt install ffmpeg
 
 """Cell 2: Importing libraries and setting OpenAI API key"""
 
@@ -26,7 +27,9 @@ import math
 import pdb
 
 from youtube_transcript_api import YouTubeTranscriptApi
-openai.api_key = ''  # Replace with your actual OpenAI API key
+
+openai.api_base = 'https://sxqib-api.hf.space/v1'
+openai.api_key = 'sk-xxx'  # Replace with your actual OpenAI API key
 
 """Cell 3: Download YouTube Video function"""
 
