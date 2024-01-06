@@ -331,7 +331,7 @@ def analyze_transcript(transcript):
         {"role": "user", "content": prompt}
     ]
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gemini-pro",
         messages=messages,
         max_tokens=512,
         n=1,
