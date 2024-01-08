@@ -36,7 +36,7 @@ openai.api_key = 'sk-xxx'  # Replace with your actual OpenAI API key
 
 def download_video(url, filename):
     yt = YouTube(url)
-    video = yt.streams.filter(file_extension='mp4', res='1080p').first()
+    video = yt.streams.filter(file_extension='mp4').first()
 
     # Download the video
     video.download(filename=filename)
