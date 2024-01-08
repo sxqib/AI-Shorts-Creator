@@ -36,7 +36,7 @@ openai.api_key = 'sk-xxx'  # Replace with your actual OpenAI API key
 
 def download_video(url, filename):
     yt = YouTube(url)
-    video = yt.streams.filter(file_extension='mp4').first()
+    video = yt.streams.filter(file_extension='mp4', res='1080p').first()
 
     # Download the video
     video.download(filename=filename)
@@ -361,11 +361,11 @@ def main():
     segment_video(parsed_content)
     
     # Loop through each segment
-    for i in range(0, 3):  # Replace 3 with the actual number of segments
-        input_file = f'output{str(i).zfill(3)}.mp4'
-        output_file = f'output_cropped{str(i).zfill(3)}.mp4'
-        faces = detect_faces(input_file)
-        crop_video(faces, input_file, output_file)
+    # for i in range(0, 3):  # Replace 3 with the actual number of segments
+    #     input_file = f'output{str(i).zfill(3)}.mp4'
+    #     output_file = f'output_cropped{str(i).zfill(3)}.mp4'
+    #     faces = detect_faces(input_file)
+    #     crop_video(faces, input_file, output_file)
     
     # Assume you have a way to get the transcript. This is not shown here.
  # Replace with actual transcript
